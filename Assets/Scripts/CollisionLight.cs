@@ -14,29 +14,28 @@ public class CollisionLight : MonoBehaviour
     [SerializeField] private LayerMask CollidableObjects = 1;
 
 
+
     void Awake()
     {
-        if (GetComponent<Light>() == null)
-        {
             audioSource = GetComponent<AudioSource>();
-            light = GetComponent<Light>();
             m_Rigidbody = GetComponent<Rigidbody>();
-        }
+            light = GetComponent<Light>();
     }
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision Detected!");
-        if (collision.gameObject.layer == 1)
+        if (collision.gameObject.layer == 0)
         {
-            Debug.Log("Layer Check");
-            Destroy(GetComponent<Light>());
-            if (audioSource != null && SFX != null)
+            GetComponent<Light>().enabled = false;
+            if (SFX != null)
             {
                 audioSource.clip = SFX;
                 audioSource.Play();
+                Debug.Log("Audio Feedback");
             }
             DestroyParticle.Play();
-            Debug.Log("Light Destroyed!");
+            Debug.Log("Particle Feedback");
         }
+        Debug.Log("Light Destroyed");
     }
 }
