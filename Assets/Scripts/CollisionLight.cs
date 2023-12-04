@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CollisionLight : MonoBehaviour
 {
@@ -11,9 +13,9 @@ public class CollisionLight : MonoBehaviour
     AudioSource audioSource = null;
     [SerializeField] AudioClip SFX = null;
     [SerializeField] ParticleSystem DestroyParticle = null;
+    [SerializeField] GameObject Art = null;
     [SerializeField] private LayerMask CollidableObjects = 1;
-
-
+    [SerializeField] Boolean KeepInMemory = false;
 
     void Awake()
     {
@@ -23,7 +25,7 @@ public class CollisionLight : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision Detected!");
+        //Detect collision
         if (collision.gameObject.layer == 0)
         {
             GetComponent<Light>().enabled = false;
@@ -31,11 +33,25 @@ public class CollisionLight : MonoBehaviour
             {
                 audioSource.clip = SFX;
                 audioSource.Play();
-                Debug.Log("Audio Feedback");
             }
-            DestroyParticle.Play();
-            Debug.Log("Particle Feedback");
+            Instantiate(DestroyParticle, light.transform.position, Quaternion.identity);
         }
-        Debug.Log("Light Destroyed");
+        //Only disable light
+        if(KeepInMemory == true)
+        {
+            Art.gameObject.SetActive(false);
+        }
+        else
+        {
+            //Destroy this light completely
+            StartCoroutine(DestroyLight());
+        }
     }
+
+    IEnumerator DestroyLight()
+    {
+        yield return new WaitForSeconds(1);
+        this.gameObject.SetActive(false);
+    }
+
 }
