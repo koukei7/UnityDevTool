@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LightSelectionWindow : EditorWindow
 {
-    [MenuItem("Window/Light Kit")]
+    [MenuItem("Window/Lighting Kit")]
     public static void ShowWindow()
     {
         GetWindow<LightSelectionWindow>("Light Prefab Selector");
