@@ -19,20 +19,20 @@ MonoBehaviour:
     angularOffset: 0
     translationScale: {x: 1, y: 1}
     m_LocalIntensity: 1
-    lensFlareTexture: {fileID: 2800000, guid: 8bade4525a177b441bb294f5e2fb6916, type: 3}
+    lensFlareTexture: {fileID: 2800000, guid: 4062eaedf4f11d140832a0650bfc3b5b, type: 3}
     uniformScale: 1
-    sizeXY: {x: 1, y: 1}
-    allowMultipleElement: 0
+    sizeXY: {x: 0.5, y: 0.5}
+    allowMultipleElement: 1
     m_Count: 5
     preserveAspectRatio: 1
     rotation: 0
     tint: {r: 1, g: 1, b: 1, a: 0.5}
-    blendMode: 0
+    blendMode: 3
     autoRotate: 0
     flareType: 0
-    modulateByLightColor: 0
+    modulateByLightColor: 1
     isFoldOpened: 1
-    distribution: 0
+    distribution: 1
     lengthSpread: 1
     positionCurve:
       serializedVersion: 2
