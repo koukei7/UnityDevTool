@@ -44,6 +44,7 @@ public class CollisionLight : MonoBehaviour
         else
         {
             //Destroy this light completely
+            Art.gameObject.SetActive(false);
             StartCoroutine(DestroyLight());
         }
     }

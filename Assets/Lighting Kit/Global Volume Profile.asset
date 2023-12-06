@@ -15,10 +15,10 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1.05
+    m_Value: 1.4
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 10
   scatter:
     m_OverrideState: 1
     m_Value: 0.481
@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Value: {fileID: 2800000, guid: 8b9ddc652b898fe4d9d5ca566d345735, type: 3}
   dirtIntensity:
     m_OverrideState: 1
-    m_Value: 11
+    m_Value: 50
 --- !u!114 &-3967504644241400858
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -82,8 +82,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.47560975
-          value: 0.5128205
+          time: 0.5301508
+          value: 0.57142854
           inSlope: 1.4556218
           outSlope: 1.4556218
           tangentMode: 0
@@ -91,10 +91,10 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.73414636
-          value: 0.85641026
-          inSlope: 0.45993596
-          outSlope: 0.45993596
+          time: 0.7336683
+          value: 0.8201058
+          inSlope: 0.7576106
+          outSlope: 0.7576106
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
